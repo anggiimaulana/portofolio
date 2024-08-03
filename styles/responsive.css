@@ -50,6 +50,17 @@
   }
 
   /* Navigation */
+  .nav {
+    border-bottom: 2px solid var(--abu-abu);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white; /* Pastikan elemen tetap terlihat */
+    z-index: 1000; /* Agar elemen tetap berada di atas elemen lainnya */
+    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
+  }
+
   nav {
     position: fixed;
     width: 50%;
@@ -78,6 +89,7 @@
 
   :root {
     --sectionPadding: 4rem 0;
+    --abu-abu: #DCDCDC;
   }
 
   /* Titles */
@@ -94,6 +106,7 @@
   #hero {
     grid-template-columns: 1fr;
     height: fit-content;
+    margin-top: 125px;
   }
 
   .hero-right {
@@ -154,5 +167,26 @@
 
   .logo {
     font-size: 22px;
+    margin-top: 5px;
+    margin-left: 25px;
+  }
+}
+
+@media screen and (min-width:1001px) and (max-width: 1150px) {
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 52%; }
+  }
+  
+  @keyframes reverseTyping {
+    from { width: 52%; }
+    to { width: 0; }
+  }
+
+  .hero-name {
+    width: 100%; 
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
   }
 }

@@ -10,7 +10,7 @@
   --primaryBackgroundColor: #fff;
   --secondaryBackgroundColor: #fbfbfb;
   --thirdBackgroundColor: #f5f3fe;
-
+  --abu-abu: #DCDCDC;
   --primaryIconColor: #7e74f1;
   --primaryIconColorHover: #5d51e8;
 
@@ -187,7 +187,7 @@ nav ul li a {
 .burger div {
   width: 25px;
   height: 2px;
-  background-color: #000;
+  background-color: var(--primaryTextColor);
   margin: 7px;
   transition: all 0.3s;
   z-index: 99;
@@ -233,6 +233,7 @@ nav ul li a {
 #services {
   background-color: var(--secondaryBackgroundColor);
   padding: var(--sectionPadding);
+  border: 1px solid var(--abu-abu);
 }
 
 .services .pre-title {
@@ -244,6 +245,7 @@ nav ul li a {
 }
 
 .service {
+  border: 1px solid var(--abu-abu);
   padding: 3rem 2rem;
   text-align: center;
   background: var(--primaryBackgroundColor);
@@ -288,7 +290,7 @@ nav ul li a {
 .portfolio {
   border-radius: var(--itemBorderRadius);
   overflow: hidden; /* supaya gambar yang diatas itu dia ngikut border radiusnya, karena yang dikasih border radius disini adalah div portfolio ini */
-  border: 1px solid var(--borderColor);
+  border: 2px solid var(--borderColor);
 }
 
 .portfolio-cover {
@@ -347,6 +349,7 @@ nav ul li a {
 
 /* Skills and Education */
 #skills {
+  border: 1px solid var(--abu-abu);
   padding: var(--sectionPadding);
   background: var(--secondaryBackgroundColor);
 }
@@ -412,7 +415,10 @@ nav ul li a {
 /* Contact Section */
 #contact {
   padding: var(--sectionPadding);
+  border: 1px solid var(--abu-abu);
+  border-top: 0; /* Hanya menghilangkan border atas */
 }
+
 
 .contact {
   display: grid;
@@ -451,7 +457,7 @@ nav ul li a {
   width: 95%;
   padding: 0.75rem 1.3rem;
   background-color: var(--primaryIconColor);
-  color: #fff;
+  color: var(--secondaryBackgroundColor);
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -508,5 +514,5 @@ footer {
 }
 
 .footer-icons a:hover svg {
-  fill: #000;
+  fill: var(--primaryTextColor);
 }
