@@ -23,3 +23,23 @@ window.onbeforeunload = () => {
 const currentYear = new Date().getFullYear();
 // Set the current year in the span with id 'current-year'
 // document.getElementById('current-year').textContent = currentYear;
+
+document.addEventListener("DOMContentLoaded", function() {
+  const heroName = document.querySelector('.hero-name');
+  
+  function startAnimation() {
+    heroName.classList.add('typing');
+    heroName.classList.remove('reverse-typing');
+    
+    setTimeout(() => {
+      heroName.classList.remove('typing');
+      heroName.classList.add('reverse-typing');
+      
+      setTimeout(() => {
+        startAnimation(); // Ulangi animasi
+      }, 3000); // Jeda setelah animasi reverse-typing selesai
+    }, 4000); // Jeda setelah animasi typing selesai
+  }
+
+  startAnimation(); // Mulai animasi saat halaman dimuat
+});
