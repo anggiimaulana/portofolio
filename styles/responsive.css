@@ -12,6 +12,12 @@
     font-size: 0.9rem;
   }
 
+  .logo {
+    font-size: 22px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
   @keyframes typing {
     from { width: 0; }
     to { width: 67%; }
@@ -35,6 +41,7 @@
   .burger {
     display: block;
     cursor: pointer;
+    right: 20px;
   }
 
   .toggle-burger .line-1 {
@@ -63,7 +70,7 @@
 
   nav {
     position: fixed;
-    width: 50%;
+    width: 60%;
     right: 0;
     top: 0;
     height: 100vh;
@@ -166,9 +173,9 @@
   }
 
   .logo {
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 5px;
-    margin-left: 25px;
+    margin-left: 20px;
   }
 }
 
@@ -189,4 +196,17 @@
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
   }
+  
+}
+
+@media screen and (max-width: 350px) {
+    /* Navigation */
+    .nav {
+      height: 40px; /* Sesuaikan dengan tinggi elemen nav */
+    }
+
+    .burger {
+  top: 20px;
+
+    }
 }
