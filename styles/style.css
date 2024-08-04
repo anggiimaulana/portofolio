@@ -241,7 +241,12 @@ nav ul li a:hover,
 }
 
 .hero-right img {
-  width: 90%;
+  height: 300px;
+  width: 300px; /* Pastikan width dan height sama untuk membuatnya bulat */
+  border-radius: 50%;
+  object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+  margin-bottom: 30px;
+  cursor: pointer; /* Menunjukkan gambar bisa diklik */
 }
 
 .hero-right {

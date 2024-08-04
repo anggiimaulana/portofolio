@@ -37,6 +37,15 @@
 }
 
 @media screen and (max-width: 840px) {
+  .hero-right img {
+    height: 325px; /* Pastikan width dan height sama untuk membuatnya bulat */
+    width: 325px; /* Pastikan width dan height sama untuk membuatnya bulat */
+    border-radius: 50%;
+    object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+    margin-bottom: 30px;
+    cursor: pointer; /* Menunjukkan gambar bisa diklik */
+  }
+
   /* Burger */
   .burger {
     display: block;
@@ -155,6 +164,8 @@
     gap: 1rem;
   }
 
+  
+
   /* Footer */
   footer {
     padding: 2rem 0;
@@ -176,6 +187,15 @@
     font-size: 20px;
     margin-top: 5px;
     margin-left: 20px;
+  }
+
+  .hero-right img {
+    height: 180px;
+    width: 180px; /* Pastikan width dan height sama untuk membuatnya bulat */
+    border-radius: 50%;
+    object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+    margin-bottom: 30px;
+    cursor: pointer; /* Menunjukkan gambar bisa diklik */
   }
 }
 
@@ -206,7 +226,28 @@
     }
 
     .burger {
-  top: 20px;
+      top: 20px;
+    }
 
+    .hero-right img {
+      height: 150px;
+      width: 150px; /* Pastikan width dan height sama untuk membuatnya bulat */
+      border-radius: 50%;
+      object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+      margin-bottom: 30px;
+      cursor: pointer; /* Menunjukkan gambar bisa diklik */
+    }
+
+    .skills-right p {
+      width: 78%;
+    }
+
+    .contact {
+      padding: 0 10px;
+    }
+
+    .contact form {
+      width: 100%;
+      max-width: 275px;
     }
 }
