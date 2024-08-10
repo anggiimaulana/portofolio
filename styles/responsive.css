@@ -66,20 +66,9 @@
   }
 
   /* Navigation */
-  .nav {
-    border-bottom: 2px solid var(--abu-abu);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: white; /* Pastikan elemen tetap terlihat */
-    z-index: 1000; /* Agar elemen tetap berada di atas elemen lainnya */
-    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
-  }
-
   nav {
     position: fixed;
-    width: 60%;
+    width: 50%;
     right: 0;
     top: 0;
     height: 100vh;
@@ -89,6 +78,14 @@
     z-index: 9;
     transform: translateX(100%);
     transition: 0.2s ease-in-out;
+  }
+
+  .nav {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
   }
 
   nav ul {
@@ -216,7 +213,19 @@
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
   }
-  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 2px solid var(--abu-abu);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white; /* Pastikan elemen tetap terlihat */
+    z-index: 1000; /* Agar elemen tetap berada di atas elemen lainnya */
+    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -224,6 +233,7 @@
     .nav {
       height: 40px; /* Sesuaikan dengan tinggi elemen nav */
     }
+    
 
     .burger {
       top: 20px;
