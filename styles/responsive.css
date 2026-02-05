@@ -8,7 +8,7 @@
     gap: 1rem;
   }
 
-  .skills-right ul li {
+  .learnings-right ul li {
     font-size: 0.9rem;
   }
 
@@ -19,17 +19,25 @@
   }
 
   @keyframes typing {
-    from { width: 0; }
-    to { width: 67%; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 67%;
+    }
   }
-  
+
   @keyframes reverseTyping {
-    from { width: 67%; }
-    to { width: 0; }
+    from {
+      width: 67%;
+    }
+    to {
+      width: 0;
+    }
   }
 
   .hero-name {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
@@ -38,12 +46,12 @@
 
 @media screen and (max-width: 840px) {
   .hero-right img {
-    height: 325px; /* Pastikan width dan height sama untuk membuatnya bulat */
-    width: 325px; /* Pastikan width dan height sama untuk membuatnya bulat */
+    height: 325px;
+    width: 325px;
     border-radius: 50%;
-    object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+    object-fit: cover;
     margin-bottom: 30px;
-    cursor: pointer; /* Menunjukkan gambar bisa diklik */
+    cursor: pointer;
   }
 
   /* Burger */
@@ -85,7 +93,7 @@
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
-    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
+    height: 90px;
   }
 
   nav ul {
@@ -102,7 +110,7 @@
 
   :root {
     --sectionPadding: 4rem 0;
-    --abu-abu: #DCDCDC;
+    --abu-abu: #dcdcdc;
   }
 
   /* Titles */
@@ -140,28 +148,38 @@
   }
 
   @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
   }
-  
+
   @keyframes reverseTyping {
-    from { width: 100%; }
-    to { width: 0; }
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
   }
 
   .hero-name {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
   }
 
-  /* Skills Section */
-  .skills-grid {
+  /* learnings Section */
+  .learnings-grid {
     gap: 1rem;
   }
 
-  
+  .learnings-grid h2 {
+    font-size: 1.2rem;
+  }
 
   /* Footer */
   footer {
@@ -188,27 +206,35 @@
 
   .hero-right img {
     height: 180px;
-    width: 180px; /* Pastikan width dan height sama untuk membuatnya bulat */
+    width: 180px;
     border-radius: 50%;
-    object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
+    object-fit: cover;
     margin-bottom: 30px;
-    cursor: pointer; /* Menunjukkan gambar bisa diklik */
+    cursor: pointer;
   }
 }
 
-@media screen and (min-width:1001px) and (max-width: 1150px) {
+@media screen and (min-width: 1001px) and (max-width: 1150px) {
   @keyframes typing {
-    from { width: 0; }
-    to { width: 52%; }
+    from {
+      width: 0;
+    }
+    to {
+      width: 52%;
+    }
   }
-  
+
   @keyframes reverseTyping {
-    from { width: 52%; }
-    to { width: 0; }
+    from {
+      width: 52%;
+    }
+    to {
+      width: 0;
+    }
   }
 
   .hero-name {
-    width: 100%; 
+    width: 100%;
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
@@ -222,42 +248,115 @@
     width: 100%;
     top: 0;
     left: 0;
-    background-color: white; /* Pastikan elemen tetap terlihat */
-    z-index: 1000; /* Agar elemen tetap berada di atas elemen lainnya */
-    height: 90px; /* Sesuaikan dengan tinggi elemen nav */
+    background-color: white;
+    z-index: 1000;
+    height: 90px;
   }
 }
 
 @media screen and (max-width: 350px) {
-    /* Navigation */
-    .nav {
-      height: 40px; /* Sesuaikan dengan tinggi elemen nav */
-    }
-    
+  /* Navigation */
+  .nav {
+    height: 40px;
+  }
 
-    .burger {
-      top: 20px;
-    }
+  .burger {
+    top: 20px;
+  }
 
-    .hero-right img {
-      height: 150px;
-      width: 150px; /* Pastikan width dan height sama untuk membuatnya bulat */
-      border-radius: 50%;
-      object-fit: cover; /* Untuk memastikan gambar menyesuaikan dalam bentuk lingkaran */
-      margin-bottom: 30px;
-      cursor: pointer; /* Menunjukkan gambar bisa diklik */
-    }
+  .hero-right img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
 
-    .skills-right p {
-      width: 78%;
-    }
+  .learnings-right p {
+    width: 78%;
+  }
 
-    .contact {
-      padding: 0 10px;
-    }
+  .contact {
+    padding: 0 10px;
+  }
 
-    .contact form {
-      width: 100%;
-      max-width: 275px;
-    }
+  .contact form {
+    width: 100%;
+    max-width: 275px;
+  }
+}
+
+/* --- Desktop & Tablet (Minimal 769px) --- */
+@media screen and (min-width: 769px) {
+  .grid-3 {
+    display: grid;
+    /* Memaksa tepat 3 kolom */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  .carousel-controls {
+    display: none; /* Sembunyikan navigasi di desktop */
+  }
+}
+
+/* --- Mobile (Maksimal 768px) --- */
+@media screen and (max-width: 768px) {
+  #sert-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Hilangkan scrollbar default */
+  }
+
+  #sert-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sert-card {
+    flex: 0 0 85%; /* Lebar kartu 85% agar kartu berikutnya terlihat sedikit */
+    scroll-snap-align: center;
+  }
+
+  /* Styling Navigasi */
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .ctrl-btn {
+    background: var(--primaryIconColor);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+
+  .carousel-indicators {
+    display: flex;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: var(--lineColor);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  .dot.active {
+    background: var(--primaryIconColor);
+    width: 25px;
+    border-radius: 5px;
+  }
 }
