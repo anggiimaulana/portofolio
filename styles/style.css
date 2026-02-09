@@ -33,7 +33,6 @@ html {
     /* Sesuaikan offset untuk layar kecil jika navigasi lu berubah tinggi */
     scroll-padding-top: 10px;
   }
-  
 }
 
 body {
@@ -74,13 +73,13 @@ a {
     width: 0;
   }
   to {
-    width: 58%;
+    width: 13ch; /* 15 karakter untuk "Anggi Maulana" */
   }
 }
 
 @keyframes reverseTyping {
   from {
-    width: 58%;
+    width: 13ch;
   }
   to {
     width: 0;
@@ -92,7 +91,7 @@ a {
   white-space: nowrap;
   border-right: 2px solid black;
   font-family: monospace;
-  width: 75%;
+  width: 13ch; /* Tetapkan lebar maksimal */
 }
 
 .typing {
@@ -100,18 +99,6 @@ a {
 }
 .reverse-typing {
   animation: reverseTyping 1.5s steps(30, end) forwards;
-}
-
-/* ─── Container ─── */
-.main-container {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 1200px) {
-  .main-container {
-    width: 90%;
-  }
 }
 
 /* ─── Buttons ─── */
@@ -163,25 +150,40 @@ a {
 }
 
 /* ─── Navigation ─── */
+/* ─── Perbaikan Container ─── */
+.main-container {
+  max-width: 1200px; /* Batas maksimal lebar */
+  width: 90%; /* Otomatis jadi 90% di layar kecil */
+  margin: 0 auto; /* Center otomatis */
+  position: relative;
+}
+
+/* ─── Perbaikan Navigation (Kuncinya di sini) ─── */
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 2rem 0;
-  border-bottom: 2px solid var(--abu-abu);
+  align-items: center;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: white;
+  color: var(--primaryTextColor);
+
+  background-color: var(--primaryBackgroundColor);
   z-index: 1000;
   height: 90px;
+  border-bottom: 2px solid var(--abu-abu);
 }
 
-nav ul {
-  list-style: none;
+/* Tambahkan wrapper di dalam nav agar sejajar dengan main-container */
+.nav-container {
   display: flex;
-  gap: 3rem;
-  margin-right: 80px;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px; /* Sama dengan main-container */
+  max-width: 90%; /* Sama dengan main-container responsive */
+  margin: 0 auto;
+  height: 100%;
 }
 
 .logo {
@@ -189,28 +191,53 @@ nav ul {
   align-items: center;
   font-weight: 700;
   font-size: 22px;
-  margin-left: 80px;
+  margin-left: 0;
+  /* Ubah variabel ini dari --primaryIconColor ke --primaryTextColor */
+  color: var(--primaryTextColor);
 }
 
 .logo a {
-  color: var(--primaryTextColor);
-  font-weight: 600;
+  /* Pastikan link di dalamnya juga mengikuti warna induknya */
+  color: inherit;
+  font-weight: 700;
 }
 
-nav ul li {
+/* Efek Hover: Logo tetap berubah warna saat disentuh kursor agar interaktif */
+.logo a:hover {
+  color: var(--primaryIconColor) !important;
+}
+
+nav ul {
+  list-style: none;
   display: flex;
-  align-items: center;
-}
-
-nav ul li a {
-  color: var(--secondaryTextColor);
+  gap: 3rem;
+  margin-right: 0; /* Ubah ke 0 */
   font-weight: 500;
+  color: var(--secondaryTextColor);
 }
 
+/* Warna Teks Menu Navigasi */
+nav ul li a {
+  color: var(
+    --secondaryTextColor
+  ) !important; /* Ubah dari secondary ke primary */
+}
+
+/* Efek Hover (Tetap biru ikon jika ingin pembeda, atau ubah sesuai selera) */
 nav ul li a:hover,
 .logo a:hover {
-  color: var(--primaryIconColor);
+  color: var(--primaryIconColor) !important;
 }
+
+/* ─── Hero Section Adjustment ─── */
+/*#hero {*/
+/*  margin-top: 50px;*/
+/*  padding: 4rem 0;*/
+/*  display: grid;*/
+/*  grid-template-columns: 1.2fr 0.8fr;*/
+/*  align-items: center;*/
+/*  gap: 2rem;*/
+/*}*/
 
 /* Burger */
 .burger div {
@@ -233,6 +260,7 @@ nav ul li a:hover,
 /* ─── Hero ─── */
 #hero {
   margin-top: 50px;
+  padding: 2rem 0;
   height: 700px;
   display: grid;
   grid-template-columns: 1fr 1fr;

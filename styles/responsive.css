@@ -45,6 +45,14 @@
 }
 
 @media screen and (max-width: 840px) {
+  .hero-left > div[style*="display: flex"] {
+    justify-content: center !important;
+  }
+
+  .hero-left > div a {
+    flex: 0 1 auto; /* Agar tombol tidak memenuhi lebar penuh */
+  }
+
   .hero-right img {
     height: 325px;
     width: 325px;
@@ -127,7 +135,7 @@
   #hero {
     grid-template-columns: 1fr;
     height: fit-content;
-    margin-top: 125px;
+    margin-top: 150px;
   }
 
   .hero-right {
@@ -189,6 +197,20 @@
 
 /* Mobile Size */
 @media screen and (max-width: 640px) {
+  .hero-left > div[style*="display: flex"] {
+    justify-content: center !important;
+    gap: 8px !important; /* Sedikit kurangi gap di mobile kecil */
+  }
+
+  .hero-left > div a {
+    font-size: 13px !important; /* Sedikit kecilkan font di mobile */
+    padding: 8px 12px !important; /* Kurangi padding */
+  }
+
+  .hero-left > div a svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
   /* Titles */
   .section-title {
     font-size: 1.3rem;

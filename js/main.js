@@ -11,10 +11,10 @@ const projectsData = [
     desc: "Administrative mobile app for village governance featuring digital signatures and complex local data management.",
   },
   {
-    id: 2,
+    id: 9,
     title: "Lung Cancer CNN Classification",
     category: "ml",
-    isFeatured: true,
+    isFeatured: false,
     img: "./images/portfolios/lung-cancer.png",
     github:
       "https://colab.research.google.com/drive/1FOVXDtrad3rsNGj1hsv1HBINYYKt7Qqo?usp=sharing",
@@ -91,7 +91,7 @@ const projectsData = [
 
   // --- AI / ML ---
   {
-    id: 9,
+    id: 10,
     title: "Bank Fraud Detection",
     category: "ml",
     isFeatured: false,
@@ -102,7 +102,7 @@ const projectsData = [
     desc: "ML pipeline for financial security using clustering and tuned classification models for transaction anomaly detection.",
   },
   {
-    id: 10,
+    id: 11,
     title: "Blibli Review Sentiment Analysis Pipeline",
     category: "ml",
     isFeatured: false,
@@ -113,7 +113,7 @@ const projectsData = [
     desc: "A comparative NLP project analyzing Blibli app reviews using LSTM networks versus TF-IDF with Logistic Regression and Linear SVC.",
   },
   {
-    id: 11,
+    id: 12,
     title: "Expert System Program Recommendation",
     category: "ml",
     isFeatured: false,
@@ -123,7 +123,7 @@ const projectsData = [
     desc: "Web-based decision support system utilizing Weighted Scoring to provide academic program recommendations.",
   },
   {
-    id: 12,
+    id: 13,
     title: "RAG Institution Chatbot",
     category: "ml",
     isFeatured: false,
@@ -134,7 +134,7 @@ const projectsData = [
     desc: "Sophisticated RAG-based chatbot using FAISS embeddings to provide factual institutional info from verified sources.",
   },
   {
-    id: 13,
+    id: 14,
     title: "LLM GitHub Roaster",
     category: "ml",
     isFeatured: false,
@@ -143,10 +143,21 @@ const projectsData = [
     tags: ["LLM", "Llama 7B", "Fine-tuned"],
     desc: "Experimental LLM project leveraging Llama 7B to generate humorous, profile-based GitHub roasts.",
   },
+  
+  {
+    id: 2,
+    title: "Myfess: IndoBERT Emotion Classification",
+    category: "ml",
+    isFeatured: true,
+    github: "https://colab.research.google.com/drive/1oLPPUT1g76Oz4QYplIkFfDCsHxtJf2WQ?usp=sharingz",
+    img: "./images/portfolios/myfess-models.png",
+    tags: ["IndoBERT", "NLP", "Fine-tuned"],
+    desc: "Fine-tuned IndoBERT model leveraging 6,000+ emotion-labeled entries for student mental health detection , achieving 92% accuracy as the core AI engine for real-time psychological assessment.",
+  },
 
   // --- WEBSITE ---
   {
-    id: 14,
+    id: 15,
     title: "jokiantam.com",
     category: "web",
     isFeatured: false,
@@ -156,7 +167,7 @@ const projectsData = [
     desc: "Transactional platform for gold purchase queues with theater-style booking logic and admin verification.",
   },
   {
-    id: 15,
+    id: 16,
     title: "Smart City Mini Library",
     category: "web",
     demo: "https://mini-library.jokiinit.com/",
@@ -166,7 +177,7 @@ const projectsData = [
     desc: "Interactive educational portal with automated quizzes, certification logic, and extensive multimedia research libraries.",
   },
   {
-    id: 16,
+    id: 17,
     title: "DesaKita Backend & Dashboard",
     category: "web",
     isFeatured: false,
@@ -176,7 +187,7 @@ const projectsData = [
     desc: "Comprehensive administrative dashboard and RESTful API backend for synchronized village management.",
   },
   {
-    id: 17,
+    id: 18,
     title: "Bulak Village E-Governance & Public Information Portal",
     category: "web",
     isFeatured: false,
@@ -186,7 +197,7 @@ const projectsData = [
     desc: "A village management system featuring a public informational portal and an automated letter submission workflow for citizens.",
   },
   {
-    id: 18,
+    id: 19,
     title: "Myfess - Student Counseling",
     category: "web",
     isFeatured: false,
@@ -196,7 +207,7 @@ const projectsData = [
     desc: "Mental health platform offering online/offline consultations with real-time data visualization.",
   },
   {
-    id: 19,
+    id: 20,
     title: "Class Web D4SIKC1C",
     category: "web",
     isFeatured: false,
@@ -208,7 +219,7 @@ const projectsData = [
     desc: "Informational portal for student profiles and galleries, demonstrating foundational skills in web interactivity.",
   },
   {
-    id: 20,
+    id: 21,
     title: "IoT Fire Detection System",
     category: "web",
     isFeatured: false,
@@ -267,7 +278,7 @@ const certificationData = [
     img: "./images/certification/ml-pemula.png",
     link: "https://www.dicoding.com/certificates/4EXG3MRVDZRL",
     tags: ["Python", "Classification", "Clustering"],
-    desc: "Developed deep learning models for Computer Vision, NLP, and Time Series using TensorFlow.",
+    desc: "Mastered the end-to-end Machine Learning workflow, from feature engineering to developing supervised (classification & regression) and unsupervised models specifically for tabular data.",
   },
 ];
 
@@ -443,35 +454,39 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 // });
 
-const grid = document.getElementById("sert-grid");
-const dotsContainer = document.getElementById("sert-dots");
-const cards = document.querySelectorAll(".sert-card");
-const prevBtn = document.getElementById("prevSert");
-const nextBtn = document.getElementById("nextSert");
+// // Carousel untuk sertifikasi (hanya jalan jika elemen ada)
+// const grid = document.getElementById("sert-grid");
+// const dotsContainer = document.getElementById("sert-dots");
+// const prevBtn = document.getElementById("prevSert");
+// const nextBtn = document.getElementById("nextSert");
 
-// Buat dots sesuai jumlah card
-cards.forEach((_, i) => {
-  const dot = document.createElement("div");
-  dot.classList.add("dot");
-  if (i === 0) dot.classList.add("active");
-  dotsContainer.appendChild(dot);
-});
+// if (grid && dotsContainer && prevBtn && nextBtn) {
+//   const cards = document.querySelectorAll(".sert-card");
+  
+//   // Buat dots sesuai jumlah card
+//   cards.forEach((_, i) => {
+//     const dot = document.createElement("div");
+//     dot.classList.add("dot");
+//     if (i === 0) dot.classList.add("active");
+//     dotsContainer.appendChild(dot);
+//   });
 
-const dots = document.querySelectorAll(".dot");
+//   const dots = document.querySelectorAll(".dot");
 
-// Fungsi update indicator saat scroll
-grid.addEventListener("scroll", () => {
-  const scrollIndex = Math.round(grid.scrollLeft / (cards[0].offsetWidth + 24));
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === scrollIndex);
-  });
-});
+//   // Fungsi update indicator saat scroll
+//   grid.addEventListener("scroll", () => {
+//     const scrollIndex = Math.round(grid.scrollLeft / (cards[0].offsetWidth + 24));
+//     dots.forEach((dot, i) => {
+//       dot.classList.toggle("active", i === scrollIndex);
+//     });
+//   });
 
-// Event Klik Panah
-nextBtn.addEventListener("click", () => {
-  grid.scrollLeft += cards[0].offsetWidth + 24;
-});
+//   // Event Klik Panah
+//   nextBtn.addEventListener("click", () => {
+//     grid.scrollLeft += cards[0].offsetWidth + 24;
+//   });
 
-prevBtn.addEventListener("click", () => {
-  grid.scrollLeft -= cards[0].offsetWidth + 24;
-});
+//   prevBtn.addEventListener("click", () => {
+//     grid.scrollLeft -= cards[0].offsetWidth + 24;
+//   });
+// }
